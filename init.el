@@ -13,6 +13,12 @@
  '(user-mail-address "tboegi@web.de"))
 
 
+(when (eq system-type 'darwin) ;; mac specific settings
+;;  ;;(setq mac-option-modifier 'alt)
+;;  ;;(setq mac-command-modifier 'meta)
+  (global-set-key [delete] 'delete-char) ;; sets fn-delete to be right-delete
+)
+
 ;;;****************************************
 ;;;* Set the appropriate variables to fit *
 ;;;* the C-Guidelines of XXXXXXXX         *
