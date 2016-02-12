@@ -57,14 +57,6 @@
              (setq c-block-comments-indent-p 4)
              (c-set-style "fri")))
 
-(add-hook 'c-mode-hook
-          '(lambda ()
-             (setq fill-column 70)
-             (setq c-block-comments-indent-p 4)
-             (c-set-style "fri")
-             (setq tab-width 2)
-             (setq indent-tabs-mode t)
-					 ))
 
 (add-hook 'c++-mode-hook
           '(lambda ()
@@ -130,9 +122,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-########################################################
-# https://www.kernel.org/doc/Documentation/CodingStyle #
-########################################################
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; https://www.kernel.org/doc/Documentation/CodingStyle ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
@@ -160,12 +152,13 @@
             (let ((filename (buffer-file-name)))
               ;; Enable kernel mode for the appropriate files
               (when (and filename
-                         (string-match (expand-file-name "~/src/linux-trees")
+                         (string-match (expand-file-name "~/projects/git")
                                        filename))
                 (setq indent-tabs-mode t)
+                (setq tab-width 8)
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")))))
 
-#This will make emacs go better with the kernel coding style for C
-#files below ~/src/linux-trees.
+;;This will make emacs go better with the kernel coding style for C
+;;files below ~/src/linux-trees.
 
