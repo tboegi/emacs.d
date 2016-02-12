@@ -9,6 +9,7 @@
  '(line-number-mode t)
  '(paren-mode (quote sexp) nil (paren))
  '(query-user-mail-address nil)
+ '(send-mail-function nil)
  '(tab-width 2)
  '(user-mail-address "tboegi@web.de"))
 
