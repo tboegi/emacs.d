@@ -1,3 +1,7 @@
+(custom-set-variables
+ '(column-number-mode t)
+ '(line-number-mode t))
+
 
 (add-hook 'c-mode-common-hook
           (lambda ()
@@ -23,10 +27,10 @@
 
 (add-hook 'sh-mode-hook
           '(lambda ()
-             (setq tab-width 8)
+             (setq tab-width 2)
              (setq indent-tabs-mode t)
-             (setq sh-indentation 8)
-             (setq sh-basic-offset 8)
+             (setq sh-indentation 2)
+             (setq sh-basic-offset 2)
              (setq sh-indent-for-then 0)
              (setq sh-indent-for-case-label 0)
              (setq sh-indent-for-case-alt '+)
