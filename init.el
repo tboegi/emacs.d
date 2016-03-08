@@ -11,7 +11,12 @@
              '("linux" (c-offsets-alist
                         (arglist-cont-nonempty
                          c-lineup-gcc-asm-reg
-                         c-lineup-arglist-tabs-only))))))
+                         c-lineup-arglist-tabs-only)
+			)
+	       )
+	     )
+	    )
+	  )
 
 (add-hook 'c-mode-hook
           (lambda ()
@@ -23,7 +28,11 @@
                 (setq indent-tabs-mode t)
                 (setq tab-width 8)
                 (setq show-trailing-whitespace t)
-                (c-set-style "linux-tabs-only")))))
+                (c-set-style "linux-tabs-only")
+		)
+	      )
+	    )
+	  )
 
 (add-hook 'sh-mode-hook
           '(lambda ()
@@ -37,6 +46,7 @@
              (sh-handle-prev-case-alt-end 0)
              (c-set-style "linux-tabs-only")
              (setq fill-column 70)
-             ))
+             )
+	  )
 
 
