@@ -34,7 +34,7 @@
             (let ((filename (buffer-file-name)))
               ;; Enable kernel mode for the appropriate files
               (when (and filename
-                         (string-match (expand-file-name "~/projects/git")
+                         (string-match "/projects/git"
                                        filename))
                 (setq indent-tabs-mode t)
                 (setq tab-width 8)
@@ -60,7 +60,7 @@
 	     (let ((filename (buffer-file-name)))
 	       ;; Enable kernel mode for the appropriate files
 	       (when (and filename
-			  (string-match (expand-file-name "~/projects/git")
+			  (string-match "/projects/git"
 					filename))
 		 (setq indent-tabs-mode t)
 		 (setq tab-width 8)
