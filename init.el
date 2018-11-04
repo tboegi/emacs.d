@@ -30,20 +30,20 @@
 	  )
 
 (add-hook 'c-mode-hook
-          (lambda ()
-            (let ((filename (buffer-file-name)))
-              ;; Enable kernel mode for the appropriate files
-              (when (and filename
-                         (string-match "/projects/git"
-                                       filename))
-                (setq indent-tabs-mode t)
-                (setq tab-width 8)
-                (setq show-trailing-whitespace t)
-                (c-set-style "linux-tabs-only")
-		)
-	      )
-	    )
-	  )
+  (lambda ()
+    (let ((filename (buffer-file-name)))
+      ;; Enable kernel mode for the appropriate files
+      (when (and filename
+                 (string-match "/projects/git"
+                               filename))
+        (setq indent-tabs-mode t)
+        (setq tab-width 8)
+        (setq show-trailing-whitespace t)
+        (c-set-style "linux-tabs-only")
+      )
+    )
+  )
+)
 
 (add-hook 'sh-mode-hook
           '(lambda ()
