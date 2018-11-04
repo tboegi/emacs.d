@@ -45,6 +45,22 @@
   )
 )
 
+(add-hook 'c++-mode-hook
+  (lambda ()
+    (let ((filename (buffer-file-name)))
+      ;; Enable kernel mode for the appropriate files
+      (when (and filename
+                 (string-match "motorRecord.cc"
+                               filename))
+        (setq indent-tabs-mode nil)
+        (setq tab-width 4)
+        (setq show-trailing-whitespace t)
+        ;(c-set-style "linux-tabs-only")
+      )
+    )
+  )
+)
+
 (add-hook 'sh-mode-hook
           '(lambda ()
              (setq tab-width 2)
