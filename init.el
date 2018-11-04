@@ -4,6 +4,7 @@
  '(line-number-mode t)
  '(setq tab-width 2)
  '(indent-tabs-mode nil)
+ '(default-style "gnu")
 )
 
 ;; Hack for Mac
