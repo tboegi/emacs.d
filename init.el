@@ -23,11 +23,12 @@
                         (arglist-cont-nonempty
                          c-lineup-gcc-asm-reg
                          c-lineup-arglist-tabs-only)
-			)
-	       )
-	     )
-	    )
-	  )
+                        )
+               )
+             )
+            (setq show-trailing-whitespace t)
+            )
+          )
 
 (add-hook 'c-mode-hook
   (lambda ()
