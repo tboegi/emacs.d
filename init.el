@@ -40,6 +40,14 @@
         (setq tab-width 8)
         (setq show-trailing-whitespace t)
         (c-set-style "linux-tabs-only")
+        )
+      (when (and filename
+                 (string-match "devMotorAsyn.c"
+                               filename))
+        (setq indent-tabs-mode nil)
+        (setq tab-width 4)
+        (setq c-basic-offset 4)
+        (setq show-trailing-whitespace t)
       )
     )
   )
@@ -48,14 +56,14 @@
 (add-hook 'c++-mode-hook
   (lambda ()
     (let ((filename (buffer-file-name)))
-      ;; Enable kernel mode for the appropriate files
+      ;; Tweaks for motorRecord.cc
       (when (and filename
                  (string-match "motorRecord.cc"
                                filename))
         (setq indent-tabs-mode nil)
         (setq tab-width 4)
+        (setq c-basic-offset 4)
         (setq show-trailing-whitespace t)
-        ;(c-set-style "linux-tabs-only")
       )
     )
   )
