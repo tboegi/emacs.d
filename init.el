@@ -71,6 +71,13 @@
   )
 )
 
+(add-hook 'java-mode-hook
+  (lambda ()
+    (setq tab-width 4)
+    (setq indent-tabs-mode t)
+  )
+)
+
 (add-hook 'sh-mode-hook
           '(lambda ()
              (setq tab-width 2)
@@ -97,5 +104,4 @@
 	     )
 	  )
 
-
-
+(put 'narrow-to-region 'disabled nil)
