@@ -1,3 +1,6 @@
+;; Switch coloring off
+(global-font-lock-mode 0)
+
 (custom-set-variables
  '(column-number-mode t)
  '(line-number-mode t))
@@ -40,3 +43,4 @@
              ))
 
 
+(put 'narrow-to-region 'disabled nil)
