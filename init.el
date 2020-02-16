@@ -11,8 +11,14 @@
 ;;  ;;(setq mac-option-modifier 'alt)
 ;;  ;;(setq mac-command-modifier 'meta)
   (global-set-key [delete] 'delete-char) ;; sets fn-delete to be right-delete
-)
+  ;; https://stackoverflow.com/questions/3376863/unable-to-type-braces-and-square-braces-in-emacs
 
+(setq mac-option-modifier nil
+      mac-command-modifier 'meta
+      x-select-enable-clipboard t)
+
+
+)
 
 (add-hook 'c-mode-common-hook
           (lambda ()
