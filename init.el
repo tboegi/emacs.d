@@ -13,12 +13,14 @@
   (global-set-key [delete] 'delete-char) ;; sets fn-delete to be right-delete
   ;; https://stackoverflow.com/questions/3376863/unable-to-type-braces-and-square-braces-in-emacs
 
-(setq mac-option-modifier nil
+  ;; https://superuser.com/questions/710358/emacs-key-for-home-end  
+  (global-set-key [home] 'beginning-of-line)
+  (global-set-key [end] 'end-of-line)
+
+  (setq mac-option-modifier nil
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
-
-
-)
+  )
 
 (add-hook 'c-mode-common-hook
           (lambda ()
