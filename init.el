@@ -4,6 +4,7 @@
  '(line-number-mode t)
  '(setq tab-width 2)
  '(indent-tabs-mode nil)
+ '(default-style "gnu")
 )
 
 ;; Hack for Mac
@@ -23,11 +24,12 @@
                         (arglist-cont-nonempty
                          c-lineup-gcc-asm-reg
                          c-lineup-arglist-tabs-only)
-			)
-	       )
-	     )
-	    )
-	  )
+                        )
+               )
+             )
+            (setq show-trailing-whitespace t)
+            )
+          )
 
 (add-hook 'c-mode-hook
           (lambda ()
@@ -41,9 +43,40 @@
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")
 		)
-	      )
+              (when (and filename
+                         (string-match "devMotorAsyn.c"
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              )
 	    )
 	  )
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name)))
+              ;; Tweaks for motorRecord.cc
+              (when (and filename
+                         (string-match "motorRecord.cc"
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              )
+            )
+          )
+
+(add-hook 'java-mode-hook
+          (lambda ()
+            (setq tab-width 4)
+            (setq indent-tabs-mode nil)
+            )
+          )
 
 (add-hook 'sh-mode-hook
           '(lambda ()
@@ -70,7 +103,5 @@
 	       )
 	     )
 	  )
-
-
 
 (put 'narrow-to-region 'disabled nil)
