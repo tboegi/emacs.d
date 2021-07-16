@@ -44,7 +44,23 @@
                 (c-set-style "linux-tabs-only")
 		)
               (when (and filename
+                         (string-match-p (expand-file-name "/epics/modules/asyn")
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              (when (and filename
                          (string-match "devMotorAsyn.c"
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              (when (and filename
+                         (string-match-p (expand-file-name "/epics/modules/asyn")
                                        filename))
                 (setq indent-tabs-mode nil)
                 (setq tab-width 4)
@@ -105,3 +121,4 @@
 	  )
 
 (put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
