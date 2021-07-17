@@ -17,7 +17,7 @@
   (global-set-key [delete] 'delete-char) ;; sets fn-delete to be right-delete
   ;; https://stackoverflow.com/questions/3376863/unable-to-type-braces-and-square-braces-in-emacs
 
-  ;; https://superuser.com/questions/710358/emacs-key-for-home-end  
+  ;; https://superuser.com/questions/710358/emacs-key-for-home-end
   (global-set-key [home] 'beginning-of-line)
   (global-set-key [end] 'end-of-line)
 
@@ -53,14 +53,59 @@
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")
 		)
-	      )
+              (when (and filename
+                         (string-match-p (expand-file-name "/epics/modules/asyn")
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              (when (and filename
+                         (string-match "devMotorAsyn.c"
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              (when (and filename
+                         (string-match-p (expand-file-name "/epics/base/")
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              )
 	    )
 	  )
 
 (add-hook 'java-mode-hook (lambda ()
     (setq tab-width 4)
     (setq indent-tabs-mode nil)))
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name)))
+              ;; Tweaks for motorRecord.cc
+              (when (and filename
+                         (string-match "motorRecord.cc"
+                                       filename))
+                (setq indent-tabs-mode nil)
+                (setq tab-width 4)
+                (setq c-basic-offset 4)
+                (setq show-trailing-whitespace t)
+                )
+              )
+            )
+          )
 
+(add-hook 'java-mode-hook
+          (lambda ()
+            (setq tab-width 4)
+            (setq indent-tabs-mode nil)
+            )
+          )
 (add-hook 'sh-mode-hook
           '(lambda ()
              (setq tab-width 2)
@@ -86,9 +131,6 @@
 	       )
 	     )
 	  )
-
-
-
 (put 'narrow-to-region 'disabled nil)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -96,3 +138,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
