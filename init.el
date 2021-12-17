@@ -14,6 +14,7 @@
 (when (eq system-type 'darwin) ;; mac specific settings
 ;;  ;;(setq mac-option-modifier 'alt)
 ;;  ;;(setq mac-command-modifier 'meta)
+  (setq ns-right-alternate-modifier 'none)
   (global-set-key [delete] 'delete-char) ;; sets fn-delete to be right-delete
   ;; https://stackoverflow.com/questions/3376863/unable-to-type-braces-and-square-braces-in-emacs
 
