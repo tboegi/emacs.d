@@ -1,14 +1,11 @@
 ;; Default, cloumn and line number, no TAB
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(indent-tabs-mode nil)
  '(line-number-mode t)
- '(setq tab-width t)
- '(show-trailing-whitespace t))
+ '(setq tab-width 2)
+ '(indent-tabs-mode nil)
+ '(show-trailing-whitespace t)
+)
 
 ;; Hack for Mac
 (when (eq system-type 'darwin) ;; mac specific settings
@@ -22,11 +19,10 @@
   (global-set-key [home] 'beginning-of-line)
   (global-set-key [end] 'end-of-line)
 
+  ;;https://stackoverflow.com/questions/4821984/emacs-osx-default-font-setting-does-not-persist/4822066#4822066
   (custom-set-faces
    '(default ((t (:height 135 :family "Menlo"))))
    )
-;;(set-frame-font "Inconsolata 14" nil t)
-;;(set-default-font "Inconsolata 14" nil t)
 
   (setq mac-option-modifier nil
       mac-command-modifier 'meta
@@ -138,12 +134,5 @@
 	       )
 	     )
 	  )
-(put 'narrow-to-region 'disabled nil)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
