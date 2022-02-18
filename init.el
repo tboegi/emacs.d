@@ -22,6 +22,12 @@
   (global-set-key [home] 'beginning-of-line)
   (global-set-key [end] 'end-of-line)
 
+  (custom-set-faces
+   '(default ((t (:height 135 :family "Menlo"))))
+   )
+;;(set-frame-font "Inconsolata 14" nil t)
+;;(set-default-font "Inconsolata 14" nil t)
+
   (setq mac-option-modifier nil
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
