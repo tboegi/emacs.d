@@ -14,6 +14,11 @@
   (global-set-key [delete] 'delete-char) ;; sets fn-delete to be right-delete
 )
 
+;; Backspace is backspace and not help on BSD
+(when (eq system-type 'berkeley-unix)
+  (global-set-key [?\C-h] 'delete-backward-char)
+)
+
 
 (add-hook 'c-mode-common-hook
           (lambda ()
