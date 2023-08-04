@@ -26,8 +26,14 @@
 
   (setq mac-option-modifier nil
       mac-command-modifier 'meta
-      x-select-enable-clipboard t)
+      x-select-enable-clipboard t
   )
+)
+
+;; Backspace is backspace and not help on BSD
+(when (eq system-type 'berkeley-unix)
+  (global-set-key [?\C-h] 'delete-backward-char)
+)
 
 (add-hook 'c-mode-common-hook
           (lambda ()
